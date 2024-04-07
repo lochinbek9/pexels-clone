@@ -31,11 +31,11 @@
                 <form class="nav-search" method="get">
                     <input type="text" id="searchInput" 
                     placeholder="Search for free Photos">
-                    <button type="submit">
+                    <button type="submit" class="search-photos-btn" onclick="searchPhotos()">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </button> 
                 </form>
-            </div>
+            </div> 
             <!-- join btn -->
             <a href="#" class="nav-join">Join </a>
         </nav>
@@ -48,17 +48,51 @@
         <!-- heading -->
       <div class="main-heading">
         <h4>Find All Free Images Here</h4>
-        <h1>Discover the Best of Pexels</h1>
+        <h1 class="main-heading-title">Discover the Best of Pexels</h1>
       </div>
       <!-- Photo container -->
-      <div class="photo-container">
+      <div class="photo-container" id="photo-container">
         <!-- box -->
         <div class="photo-box">
-            <img src="./images/1.jpg" alt="">
+            <img src="./images/1.jpg" alt="" width="280">
+            <!-- download-btn -->
+            <button class="photo-download-btn">
+                <i class="fa-solid fa-download"></i>
+            </button>
         </div>
+        
+        <div class="photo-box">
+            <img src="./images/2.jpg" alt="" width="280">
+            <!-- download-btn -->
+            <button class="photo-download-btn">
+                <i class="fa-solid fa-download"></i>
+            </button>
+        </div>
+        <div class="photo-box">
+            <img src="./images/3.jpg" alt="" width="280">
+            <!-- download-btn -->
+            <button class="photo-download-btn">
+                <i class="fa-solid fa-download"></i>
+            </button>
+        </div>
+        <div class="photo-box">
+            <img src="./images/4.jpg" alt="" width="280">
+            <!-- download-btn -->
+            <button class="photo-download-btn">
+                <i class="fa-solid fa-download"></i>
+            </button>
+        </div>
+      </div>
+
+      <!----------- loading-spinner -------------->
+
+      <div id="loadingSpinner" class="loading-spinner">
+
       </div>
     </section>
    </main>
     <!-- END SITE MAIN -->
+
+    <script src="./js/app.js"></script>
 </body>
 </html>
