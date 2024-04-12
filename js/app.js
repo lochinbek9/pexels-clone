@@ -13,7 +13,7 @@ async function searchPhotos(){
     showLoadingSpinner();
     keyword  = document.getElementById("searchInput").value;
     const photoContainer = document.getElementById("photo-container");
-    currentPage = "1";
+    currentPage = 1;
     photoContainer.innerHTML = "";
     loadMoreImages();
 }
@@ -36,6 +36,8 @@ async function loadMoreImages(){
             const finalURL = response.url;
 
             const photoBox = createPhotoBox(finalURL, `Image ${i + 1}`);
+
+            photoContainer.appendChild(photoBox)
         } 
         catch(error){
             console.log(error);
@@ -51,6 +53,13 @@ function createPhotoBox(imageURL, altText){
     img.src = imageURL;
     img.alt = altText;
     photoBox.appendChild(img);
+
+    const downloadBtn = document.createElement("button");
+    downloadBtn.classList.add("photo-download-btn");
+    downloadBtn.innerHTML = '<i class="fa-solid fa-download"></i>';
+    photoBox.appendChild(downloadBtn);
+
+    return photoBox;
 }
 
 // show loading spinner function
